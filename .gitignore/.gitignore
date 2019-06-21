@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int grösse = Convert.ToInt32(Console.ReadLine());
+            int anzahl = Convert.ToInt32(Console.ReadLine());
+            
+            for (int x = 0; x < anzahl; x++)
+            {
+                string [] bild = Console.ReadLine().Split(' ');
+                int breite = Convert.ToInt32(bild[0]);
+                int höhe = Convert.ToInt32(bild[1]);
+                //Console.WriteLine(breite + " " + höhe);               
+                if (breite < grösse || höhe < grösse)
+                {
+                    Console.WriteLine("UPLOAD ANOTHER");
+                }
+                else
+                {
+                    if (breite == höhe)
+                    {
+                        Console.WriteLine("ACCEPTED");
+                    }
+                    else
+                    {
+                        Console.WriteLine("CROP IT");
+                    }
+                }
+            }
+        }
+    }
+}
